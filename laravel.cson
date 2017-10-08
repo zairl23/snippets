@@ -27,3 +27,11 @@
             DB::rollBack();
             DB::commit();
         """
+    'la-package-publish':
+        'prefix':'la-package-publish'
+        'body':"""
+            // @link https://laravel.com/docs/master/packages#public-assets
+            $this->publishes([
+                __DIR__.'/path/to/assets' => public_path('vendor/courier'),
+            ], 'public');
+        """

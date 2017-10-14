@@ -20,18 +20,58 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 '.source.php':
-    'la-transation':
-        'prefix': 'la-transation'
-        'body': """
-            DB::beginTransaction();
-            DB::rollBack();
-            DB::commit();
-        """
-    'la-package-publish':
-        'prefix':'la-package-publish'
-        'body':"""
-            // @link https://laravel.com/docs/master/packages#public-assets
-            $this->publishes([
-                __DIR__.'/path/to/assets' => public_path('vendor/courier'),
-            ], 'public');
-        """
+  'cmmc':
+    'prefix': 'cmmc',
+    'body':"""
+      /**
+       * $1
+       */
+    """
+  'cmmf':
+    'prefix': 'cmmf',
+    'body':"""
+      /**
+       * $1
+       *
+       * @param
+       * @return
+       * @throws
+       * @author zairl23
+       */
+    """
+  'field':
+    'prefix': 'field'
+    'body': """
+      /**
+       * @Field(key="$1", name="$2", type="$3")
+       * @$4(key="$5", name="$6", className="$7")
+       */
+    """
+  'la-package-publish':
+    'prefix':'la-package-publish'
+    'body':"""
+      // @link https://laravel.com/docs/master/packages#public-assets
+      $this->publishes([
+        __DIR__.'/path/to/assets' => public_path('vendor/courier'),
+    ], 'public');
+    """
+  'la-transation':
+      'prefix': 'la-transation'
+      'body': """
+          DB::beginTransaction();
+          DB::rollBack();
+          DB::commit();
+      """
+  'la-package-publish':
+      'prefix':'la-package-publish'
+      'body':"""
+          // @link https://laravel.com/docs/master/packages#public-assets
+          $this->publishes([
+              __DIR__.'/path/to/assets' => public_path('vendor/courier'),
+          ], 'public');
+      """
+  'mysql-createdb':
+    'prefix': 'mysql-createdb'
+    'body':"""
+        create database $1 default charset utf8mb4 collate utf8mb4_unicode_ci;
+    """
